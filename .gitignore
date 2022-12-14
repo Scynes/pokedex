@@ -1,0 +1,5 @@
+## File paths to ignore
+node_modules
+
+## File extension to ignore
+.env
