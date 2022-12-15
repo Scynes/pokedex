@@ -151,24 +151,45 @@ const autocompleteData = {
     Mew: { id: '151', img: 'http://img.pokemondb.net/artwork/mew.jpg' }
 }
 
+const $selection = $('.selection');
+
 $('input.poke-search-bar').keyup((event) => {
-  const $input = $('input.poke-search-bar').val().toLowerCase();
+    const $input = $('input.poke-search-bar').val().toLowerCase();
 
-  const validMatches = [];
+    const validMatches = [];
 
-  if ($input == '') { return }
+    if ($input == '') { return }
 
-  for (let pokemon in autocompleteData) {
+    for (let pokemon in autocompleteData) {
 
-    if (pokemon.toLowerCase().substring(0, $input.length) == $input) {
-      validMatches.push({
-        name: pokemon,
-        data: autocompleteData[pokemon]
-      })
+        if (pokemon.toLowerCase().substring(0, $input.length) == $input) {
 
+            validMatches.push({
+              name: pokemon,
+              data: autocompleteData[pokemon]
+            })
+        }
     }
-  }
 
-  validMatches.length = validMatches.length > 4 ? 4 : validMatches.length;
-  console.log(validMatches);
+    validMatches.length = validMatches.length > 6 ? 6 : validMatches.length;
+    createDropDown(validMatches);
 });
+
+const createDropDown = (matches) => {
+
+    let list = ''
+
+    matches.forEach(element => {
+      console.log(parseInt(element.data.id))
+      list += `<li id="${element.data.id}" class="poke-list"><img class="poke-img" src="${element.data.img}"/>${element.name}</li>`;
+    });
+
+    $selection.html(`<ul>${list}</ul>`);
+
+};
+
+
+$('.selection').on('click', '.poke-list', (event) => {
+
+  location.href = `/pokemon/${parseInt(event.target.id)-1}`;
+})

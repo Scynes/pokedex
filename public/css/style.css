@@ -1,5 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: rgb(255, 224, 224);
+    background-color: rgb(251, 255, 212);
+    background-image: url('/images/background.jpeg');
+    background-size: cover;
+}
+
+.selection {
+    background-color: white;
+}
+
+.selection {
+    margin: 10px auto;
+    background-color: transparent;
+}
+
+.poke-list:hover {
+    background-color: rgb(255, 151, 151);
+    cursor: pointer;
+}
+
+.poke-img {
+    width: 20px;
+    mix-blend-mode: multiply;
+}
+
+.poke-list {
+    padding: 5px;
+    list-style: none;
+    text-align: center;
+    border-radius: 10px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
 }
 
 .pokeball-container {
@@ -7,27 +46,18 @@ body {
 }
 
 .poke-search {
-    grid-area: 'poke-search'
-}
-
-.poke-buffer-top {
-    grid-area: 'poke-buffer-top';
-}
-
-.poke-buffer-bottom {
-    grid-area: 'poke-buffer-bottom';
+    grid-area: 'poke-search';
+    height: 100%;
 }
 
 #poke-search-wrapper {
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-rows: 20% 35% 15% 30%;
+    grid-template-rows: 55% 45%;
     grid-template-areas: 
-        'poke-buffer-top',
         'pokeball',
-        'poke-search'
-        'poke-buffer-bottom';
+        'poke-search';
     height: 100%;
 }
 
@@ -56,4 +86,60 @@ div#landing-container > footer {
         'main',
         'footer';
     height: 100vh;
+}
+
+#show-container > main {
+    grid-area: 'main';
+}
+
+#show-container > header {
+    grid-area: 'header';
+}
+
+#show-container > footer > {
+    grid-area: 'footer';
+}
+
+#show-container {
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-areas: 
+        'header',
+        'main',
+        'footer';
+    height: 100vh;
+}
+
+.pokemon-info-img {
+    grid-area: 'pokemon-info-img';
+}
+
+.pokemon-info-description {
+    grid-area: 'pokemon-info-description';
+}
+
+.pokemon-info-typing {
+    grid-area: 'pokemon-info-typing';
+}
+
+div.info-wrapper {
+    margin: auto 35%;
+    display: grid;
+    grid-template-rows: 60% 20% 20%;
+    grid-template-areas: 
+        'pokemon-info-img',
+        'pokemon-info-description',
+        'pokemon-info-typing';
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+div.info-wrapper {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+}
+
+footer {
+    align-items: center;
 }

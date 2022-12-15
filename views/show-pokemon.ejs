@@ -3,9 +3,13 @@
 
     <%- include('partials/head') %> 
 
-    <body class="type-<%= type %>">
-        <img src="<%= data.img %>" style="mix-blend-mode: multiply;">
-        <%- include('partials/footer')  %> 
+    <body>
+        <div id="show-container">
+            <%- include('partials/header') %> 
 
+            <%- include('partials/main-pokemon') %> 
+
+            <%- include('partials/footer')  %> 
+        </div>
     </body>
 </html>
