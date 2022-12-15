@@ -1,3 +1,5 @@
-body {
-    background-color: rgb(202, 106, 106);
+html, body {
+    
+    height: 100vh;
+    margin: 0;
 }
