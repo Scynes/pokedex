@@ -68,13 +68,6 @@
     box-sizing: border-box;
 }
 
-.pokeball-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .pokeball-anim {
     position: relative;
     width: 200px;
@@ -83,6 +76,7 @@
     border-radius: 50%;
     animation: fall 2s ease-in-out, shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 3;
     overflow: hidden;
+    background-color: #eee;
 }
 
 .pokeball-anim-button {
@@ -159,4 +153,17 @@
     100% { 
         transform: translate(0, 0) rotate(0); 
     }
-  }
+}
+
+/* context functions */
+.poke-search-bar {
+    height: 50px;
+    width: 350px;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    outline: none;
+    transition: all 1s ease;
+    border-radius: 10px;
+    background-color: rgb(100, 100, 100, .2);
+}

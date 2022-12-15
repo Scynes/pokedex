@@ -1,5 +1,59 @@
-html, body {
-    
+body {
+    background-color: rgb(255, 224, 224);
+}
+
+.pokeball-container {
+    grid-area: 'pokeball';
+}
+
+.poke-search {
+    grid-area: 'poke-search'
+}
+
+.poke-buffer-top {
+    grid-area: 'poke-buffer-top';
+}
+
+.poke-buffer-bottom {
+    grid-area: 'poke-buffer-bottom';
+}
+
+#poke-search-wrapper {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 20% 35% 15% 30%;
+    grid-template-areas: 
+        'poke-buffer-top',
+        'pokeball',
+        'poke-search'
+        'poke-buffer-bottom';
+    height: 100%;
+}
+
+#landing-container > main {
+    grid-area: 'main';
+}
+
+#landing-container > header {
+    grid-area: 'header';
+}
+
+#landing-container > footer > {
+    grid-area: 'footer';
+}
+
+div#landing-container > footer {
+    display: flex;
+    justify-content: center;
+}
+
+#landing-container {
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+    grid-template-areas: 
+        'header',
+        'main',
+        'footer';
     height: 100vh;
-    margin: 0;
 }

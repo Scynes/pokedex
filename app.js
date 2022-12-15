@@ -41,6 +41,7 @@ WEB_SERVER.listen(LISTENING_PORT, () => {
 
     WEB_SERVER.use(BODY_PARSER.json());
     WEB_SERVER.use(EXPRESS.static('public'));
+    WEB_SERVER.use(EXPRESS.static('controllers'));
     WEB_SERVER.set('view engine', 'ejs');
     console.log(`Express server is now listening on ${LISTENING_PORT}`);
 })
@@ -62,4 +63,3 @@ WEB_SERVER.get('/pokemon/:poke_index', (request, response) => {
         pageTitle: `${POKE_DATA.name} ID: ${POKE_DATA.id}`
     })
 });
-
