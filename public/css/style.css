@@ -110,6 +110,12 @@ div#landing-container > footer {
     height: 100vh;
 }
 
+.pokemon-info-header {
+    grid-area: 'pokemon-info-header';
+    width: 100%;
+    text-align: center;
+}
+
 .pokemon-info-img {
     display: flex;
     grid-area: 'pokemon-info-img';
@@ -122,13 +128,15 @@ div#landing-container > footer {
 
 .pokemon-info-typing {
     grid-area: 'pokemon-info-typing';
+
 }
 
 div.info-wrapper {
     margin: auto 35%;
     display: grid;
-    grid-template-rows: 60% 20% 20%;
+    grid-template-rows: 20% 45% 20% 15%;
     grid-template-areas: 
+        'pokemin-info-header',
         'pokemon-info-img',
         'pokemon-info-description',
         'pokemon-info-typing';
@@ -151,4 +159,29 @@ div.info-wrapper {
 
 footer {
     align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+td {
+    padding: 10px;
+    width: 150px;
+}
+
+span.far-right {
+    float: right;
+}
+
+.hr-1 {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+p::first-letter {
+    text-transform: uppercase;
+}
+
+span.poke-span {
+    padding: 10px;
 }

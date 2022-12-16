@@ -1,13 +1,46 @@
 <main>
     <div class="info-wrapper type-<%= type %>">
+        <div class="pokemon-info-header">
+            <h1><%= data.name %> </h1>
+            <hr class="hr-1">
+            <% 
+                if (data.type.length > 1) {
+            %>
+                    <span class="poke-span" style="float:left">Types: <%= data.type[0] %> / <%= data.type[1] %></span>
+            <%
+                } else {
+            %>
+                    <span class="poke-span" style="float:left">Types: <%= data.type[0] %></span>
+            <%
+                }
+            %> 
+            <span style="float:right; padding: 0 10px 0 0;">Height: <%= data.misc.height %></span>
+            <br>
+            <span style="float:right; padding: 5px 10px 0 0;">Weight: <%= data.misc.weight %></span>
+        </div>
         <div class="pokemon-info-img">
                 <img class="poke-info-img" src="<%= data.img %>" alt="">
         </div>
         <div class="pokemon-info-description">
-            test2
+            <hr class="hr-1">
+            <table>
+                <tr>
+                    <td>HP: <span class="far-right"><%= data.stats.hp %></span></td>
+                    <td>Attack: <span class="far-right"><%= data.stats.attack %></span></td>
+                </tr>
+                <tr>
+                    <td>Defense: <span class="far-right"><%= data.stats.defense %></span></td>
+                    <td>Sp. Attack: <span class="far-right"><%= data.stats.spattack %></span></td>
+                </tr>
+                <tr>
+                    <td>Sp. Defense: <span class="far-right"><%= data.stats.spdefense %></span></td>
+                    <td>Speed: <span class="far-right"><%= data.stats.speed %></span></td>
+                </tr>
+            </table>
+            <hr class="hr-1">
         </div>
         <div class="pokemon-info-typing">
-            test3
+            <p><%= data.misc.classification %>.</p>
         </div>
     </div>
 </main>
