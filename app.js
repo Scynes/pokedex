@@ -6,7 +6,7 @@ const EXPRESS = require('express');
 /**
  * Application variables for running the application.
  */
-const ENV = require('dotenv');
+const ENV = require('dotenv').config();
 
 /**
  * References the express server running.
@@ -38,7 +38,6 @@ const LISTENING_PORT = process.env.LISTENING_PORT || 3000;
  * intial application handlers.
  */
 WEB_SERVER.listen(LISTENING_PORT, () => {
-
     WEB_SERVER.use(BODY_PARSER.json());
     WEB_SERVER.use(EXPRESS.static('public'));
     WEB_SERVER.use(EXPRESS.static('controllers'));
