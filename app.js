@@ -31,7 +31,7 @@ const POKE_TYPES = require('./models/types.js')
 /**
  * Default application listening port.
  */
-const LISTENING_PORT = process.env.LISTENING_PORT || 3000;
+const LISTENING_PORT = process.env.PORT || process.env.LISTENING_PORT;
 
 /**
  * Listens for connections on the specified port and builds
